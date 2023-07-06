@@ -1,10 +1,13 @@
-name: build-and-push-image
+name: build-and-push-ubuntu-18-04
 
 on:
+  #   schedule:
+  #     - cron: "20 11 * * *"
   push:
-    branches:
-      - ma
-
+    branches: [main]
+    paths:
+      - "Dockerfile.ubuntu1804"
+      
 jobs:
   build-multi-arch-image:
     name: Build multi-arch Docker image
@@ -32,5 +35,5 @@ jobs:
         uses: docker/build-push-action@v4.0.0
         with:
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/${{ github.repository }}:ubuntu1804
           platforms: linux/amd64, linux/arm64
