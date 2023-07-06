@@ -33,5 +33,5 @@ jobs:
         with:
           push: true
           file: ./Dockerfile.ubuntu2004
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/${{ github.repository }}:ubuntu2204
           platforms: linux/amd64, linux/arm64
