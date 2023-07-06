@@ -1,6 +1,6 @@
 # 20.04
 FROM ubuntu:focal
-LABEL MAINTAINER="John Rofrano <rofrano@gmail.com>"
+LABEL MAINTAINER="Niels Voorn"
 
 ENV DEBIAN_FRONTEND noninteractive
 
