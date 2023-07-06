@@ -47,4 +47,4 @@ RUN chmod 600 /home/vagrant/.ssh/authorized_keys; \
 
 # Run the init daemon
 VOLUME [ "/sys/fs/cgroup" ]
-CMD ["/usr/sbin/init"]
+CMD ["/lib/systemd/systemd"]
