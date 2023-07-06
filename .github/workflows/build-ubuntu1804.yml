@@ -32,9 +32,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v4.0.0
+        uses: docker/build-push-action@v4.1.1
         with:
           push: true
-          context: ./Dockerfile.ubuntu1804
+          context: Dockerfile.ubuntu1804
           tags: ghcr.io/${{ github.repository }}:ubuntu1804
           platforms: linux/amd64, linux/arm64
