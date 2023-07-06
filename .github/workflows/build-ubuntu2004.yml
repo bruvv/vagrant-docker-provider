@@ -13,9 +13,6 @@ jobs:
     name: Build multi-arch Docker image
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2.1.0
 
@@ -32,8 +29,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v4.0.0
+        uses: docker/build-push-action@v4.1.1
         with:
           push: true
+          file: ./Dockerfile.ubuntu2004
           tags: ghcr.io/${{ github.repository }}:ubuntu2004
           platforms: linux/amd64, linux/arm64
