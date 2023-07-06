@@ -13,9 +13,6 @@ jobs:
     name: Build multi-arch Docker image
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2.1.0
 
@@ -35,6 +32,6 @@ jobs:
         uses: docker/build-push-action@v4.1.1
         with:
           push: true
-          context: Dockerfile.ubuntu1804
+          file: ./Dockerfile.ubuntu1804
           tags: ghcr.io/${{ github.repository }}:ubuntu1804
           platforms: linux/amd64, linux/arm64
