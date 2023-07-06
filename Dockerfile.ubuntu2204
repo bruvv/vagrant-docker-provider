@@ -1,3 +1,4 @@
+# 22.04
 FROM ubuntu:jammy
 LABEL MAINTAINER="John Rofrano <rofrano@gmail.com>"
 
